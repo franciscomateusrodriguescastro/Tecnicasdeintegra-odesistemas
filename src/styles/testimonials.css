@@ -1,0 +1,159 @@
+#testimonials {
+    min-height: calc(100vh - 91px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+}
+
+#testimonial_chef {
+    width: 950px;
+    height: auto;
+    border-radius: 10px;
+    /* Mantém a imagem visível em telas maiores */
+}
+
+#testimonials .section-subtitle {
+    font-size: 2rem;
+}
+
+#testimonials_content {
+    width: 100%;
+    max-width: 600px;
+    /* Limita o tamanho máximo do conteúdo */
+}
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: white;
+}
+
+.feedback-content {
+    width: 100%;
+}
+
+.feedback-content label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.feedback-content input[type="text"],
+.feedback-content input[type="email"],
+.feedback-content textarea {
+    width: 100%;
+    /* Ajusta para ocupar 100% da largura */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.feedback-content input[type="submit"] {
+    background-color: var(--color-primary-5);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.feedback-content input[type="submit"]:hover {
+    background-color: var(--color-primary-3);
+}
+
+.feedback-avatar {
+    width: 80px;
+    height: 80px;
+}
+
+
+@media screen and (max-width: 1170px) {
+    #testimonials {
+        flex-direction: column;
+    }
+
+    #testimonials .section-subtitle {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    #testimonial_chef {
+        display: none;
+        /* Remove a imagem para telas menores */
+    }
+
+    #testimonials_content {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #testimonials_content {
+        width: 100%;
+    }
+
+    .feedback {
+        width: 100%;
+    }
+}
+
+/* Estilo para a seção de feedbacks */
+#existing_feedbacks {
+    margin-top: 50px;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    /* Limite de altura para a área de feedbacks */
+    overflow-y: auto;
+    /* Habilita a rolagem vertical */
+}
+
+#existing_feedbacks h3 {
+    margin-bottom: 35px;
+    color: #634488;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estilo para cada comentário individual */
+.feedback-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.feedback-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.feedback-item strong {
+    font-size: 18px;
+    color: #333;
+}
+
+.feedback-content textarea {
+    resize: none;
+    /* Remove a setinha de redimensionamento */
+}

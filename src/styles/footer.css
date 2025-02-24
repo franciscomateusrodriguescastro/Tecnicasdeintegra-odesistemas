@@ -1,0 +1,24 @@
+footer {
+    width: 100%;
+    padding: 20px 8%;
+    background: linear-gradient(0deg, var(--color-primary-5), var(--color-primary-1));
+}
+
+#footer_items {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8% 24px 8%;
+    align-items: center;
+}
+
+#copyright {
+    color: var(--color-neutral-1);
+    font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+    #footer_items {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
