@@ -1,0 +1,3 @@
+GET http://localhost:8161/api/jolokia/read/org.apache.activemq:type=Broker,brokerName=localhost
+
+Authorization: Basic YWRtaW46YWRtaW4=
