@@ -2,7 +2,7 @@ const Stomp = require('stompit');
 
 const connectOptions = {
     host: 'localhost',
-    port: 61613,
+    port: 8161,
     connectHeaders: {
         'host': '/',
         'login': 'admin',
