@@ -7,14 +7,13 @@
 
 :root {
 
-    --color-primary-1: #d3c1e2;
-    --color-primary-2: #7d5a81;
-    --color-primary-3: #5b5fa4;
-    --color-primary-4: #995c79;
-    --color-primary-5: #7063a1;
-    --color-primary-6: #8790ba;
-    --color-primary-7: #ff0000;
-    --color-primary-8: #f0a400;
+    --color-primary-1: #fff9ea;
+    --color-primary-2: #ffe8b4;
+    --color-primary-3: #f8d477;
+    --color-primary-4: #ffe100;
+    --color-primary-5: #ffcb45;
+    --color-primary-6: #e9a209;
+
     --color-neutral-0: #fff;
     --color-neutral-1: #1d1d1d;
 }
