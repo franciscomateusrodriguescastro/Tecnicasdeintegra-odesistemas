@@ -90,3 +90,23 @@
 
     
 }
+.container {
+    display: flex;
+    align-items: flex-start;
+}
+.stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: gray;
+}
+.star.checked {
+    color: gold;
+}
+.comments {
+    margin-left: 20px;
+}
