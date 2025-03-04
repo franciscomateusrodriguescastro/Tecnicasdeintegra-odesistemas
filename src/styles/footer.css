@@ -1,7 +1,6 @@
+
 footer {
-    width: 100%;
-    padding: 20px 8%;
-    background: linear-gradient(0deg, var(--color-primary-5), var(--color-primary-1));
+    background-color: #ffe8ba;
 }
 
 #footer_items {
@@ -13,7 +12,7 @@ footer {
 
 #copyright {
     color: var(--color-neutral-1);
-    font-weight: 700;
+    font-weight: 500;
 }
 
 @media screen and (max-width: 600px) {
