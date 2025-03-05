@@ -1,3 +1,4 @@
+
 /* Variáveis de cores */
 :root {
     --color-primary-1: #fff9ea;
@@ -105,3 +106,27 @@ button {
 button:hover {
     background: var(--color-primary-5);
 }
+
+footer {
+    background-color: #ffe8ba;
+}
+
+#footer_items {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8% 24px 8%;
+    align-items: center;
+}
+
+#copyright {
+    color: var(--color-neutral-1);
+    font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+    #footer_items {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
