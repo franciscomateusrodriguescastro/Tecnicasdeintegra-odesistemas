@@ -10,7 +10,7 @@
     --color-neutral-1: #1d1d1d;
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--color-primary-1);
     display: flex;
     align-items: center;
@@ -47,6 +47,8 @@ button:hover {
     background: var(--color-primary-5);
 }
 #navbar {
+    font-family: 'Poppins', sans-serif;
+
     width: 90%;
     display: flex;
     justify-content: space-between;
