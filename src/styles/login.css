@@ -1,11 +1,11 @@
 
 /* Variáveis de cores */
 :root {
-    --color-primary-1: #fff9ea;
-    --color-primary-2: #ffb300;
+    --color-primary-1: #Fdea2b;
+    --color-primary-2: #D62400;
     --color-primary-3: #f8d477;
-    --color-primary-4: #ffe100;
-    --color-primary-5: #ffcb45;
+    --color-primary-4: #000;
+    --color-primary-5: #E0DFF2;
     --color-primary-6: #e9a209;
 
     --color-neutral-0: #fff;
@@ -18,12 +18,37 @@ body {
     background-color: var(--color-primary-1);
     display: flex;
     align-items: center;
-    height: 100vh; /* Ocupa a tela inteira */
-    flex-direction: column;
-    padding-top: 60px; /* Para evitar sobreposição com a navbar fixa */
+    height: 100vh;
+    background-color: var(--color-primary-2);
 }
-
-/* Navbar */
+.container {
+    background: var(--color-primary-1);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(15, 14, 14, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+}
+.hidden { display: none; }
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: var(--color-primary-6);
+    color: rgb(15, 14, 14);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: var(--color-primary-4);
+}
 #navbar {
     font-family: 'Poppins', sans-serif;
     width: 90%;
@@ -96,7 +121,7 @@ button {
     width: 100%;
     padding: 10px;
     background: var(--color-primary-6);
-    color: white;
+    color: rgb(17, 15, 15);
     border: none;
     border-radius: 5px;
     cursor: pointer;
