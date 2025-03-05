@@ -1,6 +1,6 @@
-$(document).ready(function() {
-    // Mobile menu toggle
-    $('#mobile_btn').on('click', function() {
+$(document).ready(function () {
+    // Menu mobile
+    $('#mobile_btn').on('click', function () {
         $('#mobile_menu').toggleClass('active');
         $(this).find('i').toggleClass('fa-x');
     });
@@ -8,7 +8,25 @@ $(document).ready(function() {
     const sections = $('section');
     const navItems = $('.nav-item');
 
-    // Adding box shadow to header on scroll
+    // Estrelas da avaliação
+    const stars = document.querySelectorAll('.star');
+    const ratingValue = document.getElementById('rating-value');
+    stars.forEach(star => {
+        star.addEventListener('click', function () {
+
+            const value = this.getAttribute('data-value');
+            ratingValue.textContent = value;
+
+            stars.forEach(s => s.classList.remove('checked'));
+            this.classList.add('checked');
+            let previous = this.previousElementSibling;
+            while (previous) {
+                previous.classList.add('checked');
+                previous = previous.previousElementSibling;
+            }
+        });
+    });
+
     $(window).on('scroll', function () {
         const header = $('header');
         const scrollPosition = $(window).scrollTop() - header.outerHeight();
@@ -21,7 +39,7 @@ $(document).ready(function() {
 
         let activeSectionIndex = 0;
 
-        sections.each(function(i) {
+        sections.each(function (i) {
             const section = $(this);
             const sectionTop = section.offset().top - 96;
             const sectionBottom = sectionTop + section.outerHeight();
