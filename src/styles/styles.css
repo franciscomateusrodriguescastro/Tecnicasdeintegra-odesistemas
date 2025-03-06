@@ -8,10 +8,10 @@
 :root {
     --color-primary-1: #f1f1df;
     --color-primary-2: #da6041;
-    --color-primary-3: #b9d48b;
+    --color-primary-3: #d49a8b;
     --color-primary-4: #ff0000;
-    --color-primary-5: #f1f1c1;
-    --color-primary-6: #ff0400;
+    --color-primary-5: #a30300;
+    --color-primary-6: #a30300;
 
     --color-neutral-0: #fff;
 }
@@ -44,14 +44,14 @@ section {
     padding: 10px 14px;
     font-weight: 600;
     text-decoration: none;
-    color: var(--color-neutral-1);
+    color: var(--color-neutral-0);
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: backgound-color .3s ease;
 }
 
 .btn-default:hover {
-    background-color: var(--color-primary-3);
+    background-color: var(--color-primary-2);
 }
 
 .social-media-buttons {
