@@ -1,75 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 :root {
     --color-primary-1: #f1f1df;
     --color-primary-2: #da6041;
-    --color-primary-3: #b9d48b;
+    --color-primary-3: #d49a8b;
     --color-primary-4: #ff0000;
     --color-primary-5: #a30300;
     --color-primary-6: #a30300;
 
     --color-neutral-0: #fff;
+    --color-neutral-1: #333;
 }
-.menu-item {
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-1);
+}
+
+header {
+    background-color: var(--color-primary-1);
+    padding: 15px;
+    text-align: center;
+    color: var(--color-primary-6);
+}
+
+#navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-neutral-0);
-    padding: 12px 16px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-    margin-bottom: 12px;
+    padding: 10px 5%;
 }
 
-.menu-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.menu-item span {
+#nav_logo {
+    font-size: 1.5rem;
     font-weight: 600;
+}
+
+#nav_list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#nav_list a {
+    text-decoration: none;
     color: var(--color-neutral-1);
+    font-weight: 500;
+}
+
+
+h1, h2 {
+    text-align: center;
+    color: var(--color-primary-6);
+    margin: 20px 0;
+}
+
+#menu, #pedidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+.pedido-container{
+    background-color: var(--color-neutral-0);
+    padding: 15px;
+    border-radius: 15px;
+    width: 100%;
+    box-shadow: 2px 2px 8px rgba(255, 189, 189, 0.1);
+    align-items: center;
+    height: 100%;
+
+
+}
+
+.menu-item {
+    background-color: var(--color-neutral-0);
+    padding: 15px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 2px 2px 10px rgba(255, 189, 189, 0.1);
 }
 
 .menu-item button {
-    cursor: pointer;
-    padding: 8px 14px;
-    border: none;
     background-color: var(--color-primary-5);
-    color: var(--color-neutral-1);
-    font-weight: 600;
+    color: var(--color-neutral-0);
+    border: none;
+    padding: 10px;
     border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    transition: background-color 0.3s;
 }
 
 .menu-item button:hover {
-    background-color: var(--color-primary-3);
-    transform: scale(1.05);
-}
-
-.pedido-container {
-    margin-top: 20px;
-    padding: 20px;
-    background: var(--color-neutral-0);
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.pedido-item {
     background-color: var(--color-primary-2);
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.pedido-total {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--color-primary-6);
-    text-align: center;
+#mobile_btn {
+    background: none;
+    border: none;
+    color: var(--color-neutral-1);
+    font-size: 1.5rem;
+    cursor: pointer;
 }
+
