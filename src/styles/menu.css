@@ -110,7 +110,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(179, 114, 114, 0.74);
+    background-color: rgba(179, 114, 114, 0.555);
     color: white;
     border: none;
     cursor: pointer;

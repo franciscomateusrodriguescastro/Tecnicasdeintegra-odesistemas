@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/styles/styles.css">
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <title>Food</title>
 </head>
+
 <body>
     <header>
         <nav id="navbar">
             <i class="fa-solid fa-burger" id="nav_logo"> FOOD</i>
-            
+
             <ul id="nav_list">
                 <li class="nav-item active">
                     <a href="#home">Início</a>
@@ -51,13 +57,13 @@
             </ul>
         </div>
     </header>
-    
+
     <main id="content">
         <section id="home">
             <div class="shape"></div>
             <div id="cta">
                 <h1 class="title">
-                    O sabor  que vai até
+                    O sabor que vai até
                     <span>você</span>
                 </h1>
                 <p class="description">
@@ -101,235 +107,237 @@
             <h2 class="section-title">Cardápio</h2>
             <h3 class="section-subtitle">Nosso burgers especiais</h3>
         </section>
-        
+
         <div class="carousel-container">
             <button id="prevBtn" class="carousel-btn">&lt;</button>
             <div id="dishes" class="carousel-wrapper">
 
-            <div class="dish">
-                <div class="dish-heart">
-                    <i class="fa-solid fa-heart"></i>
-                </div>
-<!-- dentro da div nova: -->
-                <img src="src/images/burger1.png" class="dish-image" alt="burger1">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
 
-                <h3 class="dish-title">
-                    Cheddar Bacon Deluxe
-                </h3>
+         <img src="src/images/burger1.png" class="dish-image" alt="burger1">
 
-                <span class="dish-description">
-                    Delicie-se com nosso Cheddar Bacon Deluxe: pão brioche macio, carne bovina suculenta, bacon crocante, alface fresca, tomate e queijo cheddar derretido. Uma explosão de sabores em cada mordida!
-                </span>
+                    <h3 class="dish-title">
+                        Cheddar Bacon Deluxe
+                    </h3>
 
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <span>(350+)</span>
-                </div>
+                    <span class="dish-description">
+                        Delicie-se com nosso Cheddar Bacon Deluxe: pão brioche macio, carne bovina suculenta, bacon
+                        crocante, alface fresca, tomate e queijo cheddar derretido. Uma explosão de sabores em cada
+                        mordida!
+                    </span>
 
-                <div class="dish-price">
-                    <h4>R$26,00</h4>
-                    <a href="compras.html" class="btn-default">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                    </a>
-                    
-                </div>
-            </div>
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(350+)</span>
+                    </div>
 
-            <div class="dish">
-                <div class="dish-heart">
-                    <i class="fa-solid fa-heart"></i>
-                </div>
-
-                <img src="src/images/burger2.png" class="dish-image" alt="burger2">
-
-                <h3 class="dish-title">
-                    Gingerlim Special
-                </h3>
-
-                <span class="dish-description">
-                    Experimente o Gingerlim Special: pão com gingerlim, carne bovina suculenta, bacon crocante, cheddar derretido, cebola roxa, alface, tomate e nosso exclusivo molho da casa. Uma combinação única de sabores!
-                </span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <span>(350+)</span>
-                </div>
-
-                <div class="dish-price">
-                    <h4>R$28,00</h4>
-                    <a href="compras.html" class="btn-default">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="dish">
-                <div class="dish-heart">
-                    <i class="fa-solid fa-heart"></i>
-                </div>
-
-                <img src="src/images/burger3.png" class="dish-image" alt="burger3">
-
-                <h3 class="dish-title">
-                    Triple Cheddar Bacon
-                </h3>
-
-                <span class="dish-description">
-                    Saboreie o Triple Cheddar Bacon: pão brioche, três suculentas carnes bovinas com cheddar derretido entre cada uma e bacon crocante. Uma explosão de sabor em cada mordida!
-                </span>
-
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <span>(350+)</span>
-                </div>
-
-                <div class="dish-price">
-                    <h4>R$32,00</h4>
-                    <a href="compras.html" class="btn-default">
-                        <i class="fa-solid fa-basket-shopping"></i>
+                    <div class="dish-price">
+                        <h4>R$26,00</h4>
+                        <a href="compras.html" class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
                         </a>
+
+                    </div>
                 </div>
-            </div>
 
-            <div class="dish">
-                <div class="dish-heart">
-                    <i class="fa-solid fa-heart"></i>
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="src/images/burger2.png" class="dish-image" alt="burger2">
+
+                    <h3 class="dish-title">
+                        Gingerlim Special
+                    </h3>
+
+                    <span class="dish-description">
+                        Experimente o Gingerlim Special: pão com gingerlim, carne bovina suculenta, bacon crocante,
+                        cheddar derretido, cebola roxa, alface, tomate e nosso exclusivo molho da casa. Uma combinação
+                        única de sabores!
+                    </span>
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(350+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$28,00</h4>
+                        <a href="compras.html" class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </a>
+                    </div>
                 </div>
-            <!-- testes burguer -->
 
-            <img src="src/images/cryspy.png" class="dish-image" alt="burger4">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
 
-            <h3 class="dish-title">
-                cryspy Chicken
-            </h3>
+                    <img src="src/images/burger3.png" class="dish-image" alt="burger3">
 
-            <span class="dish-description">
-                um hambúrguer irresistível, feito com filé de frango empanado e crocante por fora, macio por dentro. Servido em um pão macio, acompanha maionese especial, alface fresca e queijo derretido para um sabor equilibrado. 
-            </span>
+                    <h3 class="dish-title">
+                        Triple Cheddar Bacon
+                    </h3>
 
-            <div class="dish-rate">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span>(350+)</span>
-            </div>
+                    <span class="dish-description">
+                        Saboreie o Triple Cheddar Bacon: pão brioche, três suculentas carnes bovinas com cheddar
+                        derretido entre cada uma e bacon crocante. Uma explosão de sabor em cada mordida!
+                    </span>
 
-            <div class="dish-price">
-                <h4>R$28,00</h4>
-                <a href="compras.html" class="btn-default">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                    </a>
-            </div>
-            </div>
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(350+)</span>
+                    </div>
 
-            <div class="dish">
-            <div class="dish-heart">
-                <i class="fa-solid fa-heart"></i>
-            </div>
+                    <div class="dish-price">
+                        <h4>R$32,00</h4>
+                        <a href="compras.html" class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+
+                <img src="src/images/cryspy.png" class="dish-image" alt="burger4">
+
+                    <h3 class="dish-title">
+                        cryspy Chicken
+                    </h3>
+
+                    <span class="dish-description">
+                        um hambúrguer irresistível, feito com filé de frango empanado e crocante por fora, macio por
+                        dentro. Servido em um pão macio, acompanha maionese especial, alface fresca e queijo derretido
+                        para um sabor equilibrado.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(350+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$28,00</h4>
+                        <a href="compras.html" class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
 
             <img src="src/images/original.png" class="dish-image" alt="burger5">
 
-            <h3 class="dish-title">
-                cryspy Chicken Duplo
-            </h3>
-
-            <span class="dish-description">
-                um hambúrguer irresistível, feito com filé de frango empanado crocante em dobro. Servido em um pão macio, acompanha maionese especial, alface fresca e queijo derretido para um sabor equilibrado. 
-            </span>
-
-            <div class="dish-rate">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span>(350+)</span>
-            </div>
-
-            <div class="dish-price">
-                <h4>R$34,00</h4>
-                <a href="compras.html" class="btn-default">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                    </a>
-            </div>
-            </div>
-
-            <div class="dish">
-            <div class="dish-heart">
-                <i class="fa-solid fa-heart"></i>
-            </div>
-
-
-
-<!-- teste burguer acima -->
-           
-                <img src="src/images/combo.png" class="dish-image" alt="combo">
-
                 <h3 class="dish-title">
-                    Classic Combo Deluxe
+                       cryspy Chicken Duplo
                 </h3>
 
                 <span class="dish-description">
-                    Desfrute do Classic Combo Deluxe: hambúrguer com pão brioche, carne bovina, cheddar, bacon, alface, tomate, cebola, e uma porção de batatas fritas com nosso molho especial.
+                        um hambúrguer irresistível, feito com filé de frango empanado crocante em dobro. Servido em um
+                        pão macio, acompanha maionese especial, alface fresca e queijo derretido para um sabor
+                        equilibrado.
                 </span>
 
                 <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <span>(350+)</span>
-                </div>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(350+)</span>
+                 </div>
 
                 <div class="dish-price">
-                    <h4>R$30,00</h4>
-                    <a href="compras.html" class="btn-default">
-                        <i class="fa-solid fa-basket-shopping"></i>
+                        <h4>R$34,00</h4>
+                        <a href="compras.html" class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
                         </a>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="src/images/combo.png" class="dish-image" alt="combo">
+
+                    <h3 class="dish-title">
+                        Classic Combo Deluxe
+                    </h3>
+
+                    <span class="dish-description">
+                        Desfrute do Classic Combo Deluxe: hambúrguer com pão brioche, carne bovina, cheddar, bacon,
+                        alface, tomate, cebola, e uma porção de batatas fritas com nosso molho especial.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(350+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$30,00</h4>
+                        <a href="compras.html" class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+            
+            <button id="nextBtn" class="carousel-btn">&gt;</button>
         </div>
-        <button id="nextBtn" class="carousel-btn">&gt;</button>
-    </div>
-    </div>
-    </section>
+        </div>
+        </section>
+
 
         <section id="testimonials">
             <img src="src/images/chefe.png" id="testimonial_chef" alt="chefe">
 
-                <div id="testemonials_content">
-                    <h2 class="section-title">Depoimentos</h2>
-                    <h3 class="section-subtitle">
-                        O que os clientes falam sobre nós
-                    </h3>
+            <div id="testemonials_content">
+                <h2 class="section-title">Depoimentos</h2>
+                <h3 class="section-subtitle">
+                    O que os clientes falam sobre nós
+                </h3>
 
                 <div id="feedbacks">
-          <form id="feedback_form">
+                    <form id="feedback_form">
                         <label for="nome">Nome:</label><br />
                         <input type="text" id="nome" name="nome" required /><br /><br />
                         <label for="comentario">Comentário:</label><br />
-                        <textarea
-                            id="comentario"
-                            name="comentario"
-                            rows="4"
-                            cols="50"
-                            required
-                            style="resize: none;"
-                        ></textarea><br /><br />
+                        <textarea id="comentario" name="comentario" rows="4" cols="50" required
+                            style="resize: none;"></textarea><br /><br />
                         <div class="container">
                             <p>Avaliação: <span id="rating-value">0</span>/5</p>
                             <div class="stars" id="rating">
@@ -340,25 +348,45 @@
                                 <span class="star" data-value="5">★</span>
                             </div>
                         </div>
-                        <button class="btn-default">
-                            Enviar Comentário
-                        </button>
+             <button class="btn-default">
+                          Enviar Comentário
+            </button>
                     </form>
-                    <div class="feedback">
-                        
-                        <img src="src/images/avatar.png" class="feedback-avatar" alt="avatar">
+             <div class="feedback">
 
-                        <div class="feedback-content">
-                            
-                            <p>
-                                Júnior
-                            <span>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </span>
+    <img src="src/images/avatar.png" class="feedback-avatar" alt="avatar">
+
+     <div class="feedback-content">
+
+           <p>
+                 Júnior
+                     <span>
+                          <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                    </span>
+                          </p>
+                 <p>
+                      "Perfeição de estabelecimento e sabor."
+                      </p>
+                        </div>
+                             </div>
+
+         <div class="feedback">
+                <img src="src/images/avatar.png" class="feedback-avatar" alt="avatar">
+
+                     <div class="feedback-content">
+                          <p>
+                           Júnior
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
                             </p>
                             <p>
                                 "Perfeição de estabelecimento e sabor."
@@ -366,26 +394,6 @@
                         </div>
                     </div>
 
-                    <div class="feedback">
-                        <img src="src/images/avatar.png" class="feedback-avatar" alt="avatar">
-
-                        <div class="feedback-content">
-                            <p>
-                                Júnior
-                            <span>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </span>
-                            </p>
-                            <p>
-                                "Perfeição de estabelecimento e sabor."
-                            </p>
-                        </div>
-                    </div>
-            
 
                     <button class="btn-default">
                         Ver mais avaliações
@@ -419,6 +427,7 @@
         </div>
     </footer>
 
-    <script src="src/javascript/script.js"></script>
+<script src="src/javascript/script.js"></script>
 </body>
+
 </html>
