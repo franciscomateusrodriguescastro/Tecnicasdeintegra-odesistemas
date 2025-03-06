@@ -21,15 +21,14 @@
     align-items: center;
     border-radius: 20px;
     gap: 18px;
-    width: 30%;
-    padding: 20px;
+    width: 250px;
+    padding: 10px;
     background-color: var(--color-neutral-0);
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
-    flex: 0 0 calc(100% / 3 - 20px); /* Ajuste o valor conforme necessário */
-    max-width: 320px; /* Ajuste para não ficar muito estreito */
-
+    flex: 0 0 calc(100% / 3 - 20px); /* ajustando a largura*/
+    max-width: 320px; /* Ajustando para não ficar muito estreito */
 }
 
 .dish-heart {
@@ -48,11 +47,11 @@
 }
 
 .dish-image {
-    width: 100%;
+    width: 130px;
     height: auto;
     margin-top: 32px;
     max-width: 100%;
-    
+
 }
 
 .dish-description {
@@ -97,21 +96,21 @@
 .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 1000px; /* Define um limite máximo para o carrossel */
+    max-width: 1000px; /* O limite máximo para o carrossel */
     margin: auto;
     
 }
 .carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: fit-content; /* Ajusta a largura conforme o conteúdo */
+    width: fit-content; /* Ajusta a largura  */
 }
 
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(179, 114, 114, 0.74);
     color: white;
     border: none;
     cursor: pointer;
@@ -123,18 +122,12 @@
 }
 
 .carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(66, 3, 3, 0.781);
 }
 #prevBtn {
-    position: fixed;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: -175px; 
 }
 
 #nextBtn {
-    position: fixed;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: -175px; 
 }
