@@ -78,3 +78,38 @@ $(document).ready(function () {
         distance: '20%'
     });
 });
+
+// carrossel:
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".carousel-wrapper");
+    const dishes = document.querySelectorAll(".dish");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+
+    let index = 0;
+    const itemsPerPage = 3;
+    const totalItems = dishes.length;
+    const maxIndex = Math.ceil(totalItems / itemsPerPage) - 1;
+
+    function updateCarousel() {
+        const offset = -(index * 100) / (maxIndex + 1); // Corrigido o cálculo
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    nextBtn.addEventListener("click", function () {
+        if (index < maxIndex) {
+            index++;
+            updateCarousel();
+        }
+    });
+
+    prevBtn.addEventListener("click", function () {
+        if (index > 0) {
+            index--;
+            updateCarousel();
+        }
+    });
+
+    updateCarousel();
+});
