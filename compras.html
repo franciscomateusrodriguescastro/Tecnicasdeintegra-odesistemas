@@ -3,99 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/styles/compras.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <title>Monte seu Pedido | Food</title>
+    <title>Hamburgueria - Meus Pedidos</title>
+    
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <nav id="navbar">
-            <i class="fa-solid fa-burger" id="nav_logo"> FOOD</i>
-            
-            <ul id="nav_list">
-                <li class="nav-item">
-                    <a href="index.html">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#menu">Cardápio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#testimonials">Avaliações</a>
-                </li>
-            </ul>
 
-            <button class="btn-default" onclick="window.location.href='login.html'">
-                Peça aqui
-            </button>
-
-            <button id="mobile_btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Conteúdo Principal -->
-    <main>
-        <section class="container">
-            <div class="pedido">
-                <h2>Monte seu Hambúrguer</h2>
-                <form id="pedidoForm">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-                    
-                    <label for="hamburguer">Escolha seu Hambúrguer:</label>
-                    <select id="hamburguer" name="hamburguer">
-                        <option value="Cheddar-Bacon-Deluxe">Cheddar Bacon Deluxe</option>
-                        <option value="Gingerlim-Special">Gingerlim Special</option>
-                        <option value="Triple-Cheddar-Bacon">Triple Cheddar Bacon</option>
-                        <option value="Classic-Combo-Deluxe">Classic Combo Deluxe</option>
-                    </select>
-                    
-                    <label for="quantidade">Quantidade:</label>
-                    <input type="number" id="quantidade" name="quantidade" min="1" required>
-                    
-                    <button class="btn-default">Fazer Pedido</button>
-                </form>
-                <p id="mensagem"></p>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        document.getElementById("pedidoForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("mensagem").textContent = "Pedido realizado com sucesso!";
-        });
-    </script>
-    <footer>
-        <img src="src/images/wave.svg" alt="onda">
-
-        <div id="footer_items">
-            <span id="copyrigth">
-                &copy 2025 UNIFOR
-            </span>
-
-            <div class="social-media-buttons">
-                <a href="">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-
-                <a href="">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a href="">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-            </div>
-
+    <h1>Cardápio</h1>
+    <div id="menu">
+        <div class="menu-item">
+            <span>Hambúrguer Simples - R$10,00</span>
+            <button onclick="adicionarPedido('Hambúrguer Simples', 10)">Adicionar</button>
         </div>
-    </footer>
+        <div class="menu-item">
+            <span>Hambúrguer Duplo - R$15,00</span>
+            <button onclick="adicionarPedido('Hambúrguer Duplo', 15)">Adicionar</button>
+        </div>
+        <div class="menu-item">
+            <span>Batata Frita - R$8,00</span>
+            <button onclick="adicionarPedido('Batata Frita', 8)">Adicionar</button>
+        </div>
+    </div>
 
-    <script src="src/javascript/script.js"></script>
+    <h2>Meus Pedidos</h2>
+    <div id="pedidos" class="pedido-container"></div>
+
+    <script src="src/javascript/compras.js"></script>
+
 </body>
 </html>
