@@ -79,6 +79,8 @@ $(document).ready(function () {
     });
 });
 
+
+
 // carrossel:
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -89,16 +91,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let index = 0;
     const itemsPerPage = 3;
-    const totalItems = dishes.length;
-    const maxIndex = Math.ceil(totalItems / itemsPerPage) - 1;
+    const totalPages = Math.ceil(dishes.length / itemsPerPage);
 
     function updateCarousel() {
-        const offset = -(index * 100) / (maxIndex + 1); // Corrigido o cálculo
+        const offset = -(index * 100) / totalPages;
         carousel.style.transform = `translateX(${offset}%)`;
     }
 
     nextBtn.addEventListener("click", function () {
-        if (index < maxIndex) {
+        if (index < totalPages - 1) {
             index++;
             updateCarousel();
         }
@@ -110,6 +111,4 @@ document.addEventListener("DOMContentLoaded", function () {
             updateCarousel();
         }
     });
-
-    updateCarousel();
 });

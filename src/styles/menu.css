@@ -27,8 +27,9 @@
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
-    max-width: 280px; /* Reduzi um pouco para evitar cortes */
-    flex: 0 0 calc(100% / 3 - 24px); /* Garante que sempre 3 aparecem */
+    flex: 0 0 calc(100% / 3 - 20px); /* Ajuste o valor conforme necessário */
+    max-width: 320px; /* Ajuste para não ficar muito estreito */
+
 }
 
 .dish-heart {
@@ -47,9 +48,11 @@
 }
 
 .dish-image {
-    width: auto; /* Evita que a imagem fique gigante */
-    height: 180px; /* Tamanho fixo para evitar cortes */
-    object-fit: contain; /* Mantém a proporção */
+    width: 100%;
+    height: auto;
+    margin-top: 32px;
+    max-width: 100%;
+    
 }
 
 .dish-description {
@@ -94,41 +97,44 @@
 .carousel-container {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    max-width: 1000px; /* Define um limite máximo para o carrossel */
+    margin: auto;
+    
 }
-
 .carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 200%; /* Ajustado para suportar as transições */
-    justify-content: center; /* Centraliza os itens */
-    gap: 24px; /* Mantém espaçamento */
+    width: fit-content; /* Ajusta a largura conforme o conteúdo */
 }
-
 
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6); /* Opacidade de 60% */
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
     cursor: pointer;
     font-size: 24px;
     padding: 10px 15px;
     z-index: 10;
-    border-radius: 50%; /* Deixa o botão arredondado */
+    border-radius: 50%;
     transition: background-color 0.3s ease;
 }
 
 .carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Opacidade aumenta ao passar o mouse */
+    background-color: rgba(0, 0, 0, 0.8);
 }
-
 #prevBtn {
+    position: fixed;
     left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #nextBtn {
+    position: fixed;
     right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
