@@ -1,18 +1,21 @@
+/* Variáveis de cores */
 :root {
-    --color-primary-1: #Fdea2b;
-    --color-primary-2: #D62400;
-    --color-primary-3: #E0DFF2;
-    --color-primary-4: #E0DFF2;
+    --color-primary-1: #fff9ea;
+    --color-primary-2: #ffe8b4;
+    --color-primary-3: #f8d477;
+    --color-primary-4: #ffe100;
     --color-primary-5: #ffcb45;
     --color-primary-6: #e9a209;
 
     --color-neutral-0: #fff;
     --color-neutral-1: #1d1d1d;
 }
+
+/* Estilo do Body */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-primary-1);
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: var(--color-primary-2);
@@ -37,7 +40,7 @@ button {
     width: 100%;
     padding: 10px;
     background: var(--color-primary-6);
-    color: rgb(19, 18, 18);
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -46,11 +49,17 @@ button:hover {
     background: var(--color-primary-4);
 }
 #navbar {
-    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    width: 90%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-primary-1);
+    padding: 28px 8%;
+    z-index: 3;
 }
+
 #nav_logo {
     font-size: 24px;
     color: var(--color-primary-6);
@@ -68,15 +77,56 @@ button:hover {
     font-weight: 600;
 }
 
-.nav-item.active a{
+.nav-item.active a {
     color: var(--color-neutral-1);
     border-bottom: 3px solid var(--color-primary-4);
 }
-nav {
+
+/* Container de login */
+.container {
+    background: var(--color-neutral-0);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+    margin-top: 20px;
+}
+
+/* Centraliza o título 'Login' */
+#form-title {
+    font-size: 24px;
+    color: var(--color-primary-6);
+    text-align: center;
+    margin-bottom: 20px; /* Espaçamento entre o título e os campos */
+}
+
+/* Esconder elementos */
+.hidden {
+    display: none;
+}
+
+/* Estilo dos campos de entrada */
+input {
+    width: 92%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--color-primary-6);
+    border-radius: 20px;
+}
+
+/* Estilo do botão */
+button {
     width: 100%;
-    padding: 28px 8%;
-    position: sticky;
-    top: 0;
-    background-color: var(--color-primary-1);
-    z-index: 3;
+    padding: 10px;
+    background: var(--color-primary-6);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover do botão */
+button:hover {
+    background: var(--color-primary-5);
 }

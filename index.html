@@ -49,10 +49,6 @@
                     <a href="#testimonials">Avaliações</a>
                 </li>
             </ul>
-
-            <button class="btn-default" onclick="window.open('login.html', '_blank')">
-                Peça aqui
-            </button>
         </div>
     </header>
     
@@ -245,16 +241,18 @@
                     </h3>
 
                 <div id="feedbacks">
-                    <form id="feedback_form">
+          <form id="feedback_form">
                         <label for="nome">Nome:</label><br />
-                        <input
-                            type="text"
-                            id="nome"
-                            name="nome"
+                        <input type="text" id="nome" name="nome" required /><br /><br />
+                        <label for="comentario">Comentário:</label><br />
+                        <textarea
+                            id="comentario"
+                            name="comentario"
+                            rows="4"
+                            cols="50"
                             required
-                        /><br /><br />
-                    
-                      
+                            style="resize: none;"
+                        ></textarea><br /><br />
                         <div class="container">
                             <p>Avaliação: <span id="rating-value">0</span>/5</p>
                             <div class="stars" id="rating">
@@ -264,40 +262,7 @@
                                 <span class="star" data-value="4">★</span>
                                 <span class="star" data-value="5">★</span>
                             </div>
-                            
-                           
                         </div>
-                        
-                        <script>
-                            const stars = document.querySelectorAll('.star');
-                            const ratingValue = document.getElementById('rating-value');
-                    
-                            stars.forEach(star => {
-                                star.addEventListener('click', function () {
-                                    const value = this.getAttribute('data-value');
-                                    ratingValue.textContent = value;
-                                    
-                                    stars.forEach(s => s.classList.remove('checked'));
-                                    this.classList.add('checked');
-                                    let previous = this.previousElementSibling;
-                                    while (previous) {
-                                        previous.classList.add('checked');
-                                        previous = previous.previousElementSibling;
-                                    }
-                                });
-                            });
-                        </script>
-                       <label for="comentario">Comentário:</label><br />
-                       <textarea
-                           id="comentario"
-                           name="comentario"
-                           rows="4"
-                           cols="50"
-                           required
-                           style="resize: none;"
-                       ></textarea><br /><br />
-                       
-
                         <button class="btn-default">
                             Enviar Comentário
                         </button>
