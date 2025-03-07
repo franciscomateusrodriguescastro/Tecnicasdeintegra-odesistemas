@@ -106,6 +106,31 @@ h1, h2 {
     background-color: var(--color-primary-2);
 }
 
+/* Estilizando o botão de limpar */
+.btn-limpar {
+    background-color: var(--color-primary-5);
+    color: white; 
+    border: none;
+    border-radius: 25px; 
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-limpar:hover {
+    background-color: var(--color-primary-4);
+    transform: scale(1.05);
+}
+
+.btn-limpar i {
+    font-size: 20px;
+}
+
+
 #mobile_btn {
     background: none;
     border: none;

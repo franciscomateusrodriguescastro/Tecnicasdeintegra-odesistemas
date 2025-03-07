@@ -21,7 +21,7 @@
     <header>
         <nav id="navbar">
             <i class="fa-solid fa-burger" id="nav_logo"> FOOD</i>
-
+        
             <ul id="nav_list">
                 <li class="nav-item active">
                     <a href="#home">Início</a>
@@ -33,15 +33,24 @@
                     <a href="#testimonials">Avaliações</a>
                 </li>
             </ul>
+        
+            <div id="nav_buttons">
+                <a href="compras.html" id="cart-container">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="contador-carrinho">0</span>
+                </a>
 
-            <button class="btn-default" onclick="window.open('login.html', '_blank')">
-                Peça aqui
-            </button>
-
+                <button class="btn-default" onclick="window.open('login.html', '_blank')">
+                    Login/Cadastro
+                </button>
+            </div>
+        
             <button id="mobile_btn">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </nav>
+        
+        
 
         <div id="mobile_menu">
             <ul id="mobile_nav_list">
@@ -140,10 +149,9 @@
 
                     <div class="dish-price">
                         <h4>R$26,00</h4>
-                        <a href="compras.html" class="btn-default">
+                        <button class="btn-default" onclick="adicionarPedido('Cheddar Bacon Deluxe', 26.00)">
                             <i class="fa-solid fa-basket-shopping"></i>
-                        </a>
-
+                        </button>
                     </div>
                 </div>
 
@@ -174,9 +182,9 @@
 
                     <div class="dish-price">
                         <h4>R$28,00</h4>
-                        <a href="compras.html" class="btn-default">
+                        <button class="btn-default" onclick="adicionarPedido('Gingerlim Special', 28.00)">
                             <i class="fa-solid fa-basket-shopping"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -207,9 +215,9 @@
 
                     <div class="dish-price">
                         <h4>R$32,00</h4>
-                        <a href="compras.html" class="btn-default">
+                        <button class="btn-default" onclick="adicionarPedido('Triple Cheddar Bacon', 32.00)">
                             <i class="fa-solid fa-basket-shopping"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -222,7 +230,7 @@
                 <img src="src/images/cryspy.png" class="dish-image" alt="burger4">
 
                     <h3 class="dish-title">
-                        cryspy Chicken
+                        Cryspy Chicken
                     </h3>
 
                     <span class="dish-description">
@@ -242,9 +250,9 @@
 
                     <div class="dish-price">
                         <h4>R$28,00</h4>
-                        <a href="compras.html" class="btn-default">
+                        <button class="btn-default" onclick="adicionarPedido('Cryspy Chicken', 28.00)">
                             <i class="fa-solid fa-basket-shopping"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -256,7 +264,7 @@
             <img src="src/images/original.png" class="dish-image" alt="burger5">
 
                 <h3 class="dish-title">
-                       cryspy Chicken Duplo
+                       Cryspy Chicken Duplo
                 </h3>
 
                 <span class="dish-description">
@@ -276,9 +284,9 @@
 
                 <div class="dish-price">
                         <h4>R$34,00</h4>
-                        <a href="compras.html" class="btn-default">
+                        <button class="btn-default" onclick="adicionarPedido('Cryspy Chicken Duplo', 34.00)">
                             <i class="fa-solid fa-basket-shopping"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -309,9 +317,9 @@
 
                     <div class="dish-price">
                         <h4>R$30,00</h4>
-                        <a href="compras.html" class="btn-default">
+                        <button class="btn-default" onclick="adicionarPedido('Classic Combo Deluxe', 30.00)">
                             <i class="fa-solid fa-basket-shopping"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -428,6 +436,8 @@
     </footer>
 
 <script src="src/javascript/script.js"></script>
+<script src="src/javascript/compras.js"></script>
+
 </body>
 
 </html>
