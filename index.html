@@ -341,13 +341,18 @@
 
                 <div id="feedbacks">
                     <form id="feedback_form">
-                        <label for="nome">Nome:</label><br />
-                        <input type="text" id="nome" name="nome" required /><br /><br />
-                        <label for="comentario">Comentário:</label><br />
-                        <textarea id="comentario" name="comentario" rows="4" cols="50" required
-                            style="resize: none;"></textarea><br /><br />
+
+                       <b><label for="nome">Nome:</label><br/></b>
+                        <textarea id="nome" name="nome" rows="4" cols="12" style="font-size: 15px;"  required style="resize: none" placeholder="Digite aqui seu nome:"></textarea><br/><br/>             
+                        
+                        
+                        <b><label for="comentario">Comentário:</label><br/></b>
+                        <textarea id="comentario" name="comentario" rows="4" cols="12" style="font-size: 15px;" required style="resize: none" placeholder="Digite aqui seu comentário:"></textarea><br/><br/>
+                        
                         <div class="container">
-                            <p>Avaliação: <span id="rating-value">0</span>/5</p>
+
+                            <b><p>Avaliação: <span id="rating-value">0</span>/5</p></b>
+
                             <div class="stars" id="rating">
                                 <span class="star" data-value="1">★</span>
                                 <span class="star" data-value="2">★</span>
@@ -357,9 +362,10 @@
                             </div>
                         </div>
              <button class="btn-default">
-                          Enviar Comentário
+                 Enviar Comentário
             </button>
                     </form>
+
              <div class="feedback">
 
     <img src="src/images/avatar.png" class="feedback-avatar" alt="avatar">

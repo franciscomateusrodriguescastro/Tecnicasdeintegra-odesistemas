@@ -46,6 +46,16 @@ header {
     border-bottom: 3px solid var(--color-primary-4);
 }
 
+
+
+/* login/cadastro */
+
+.btn-default {
+    position: relative;
+    top: -10px; /* Move o botão 10px para cima */
+}
+
+
  /* Carrinho de compras */
 #nav_buttons {
     display: flex;

@@ -31,6 +31,13 @@
     max-width: 320px; /* Ajustando para não ficar muito estreito */
 }
 
+.fa-solid.fa-heart {
+    color: #daa520;
+}
+
+.fa-solid.fa-star {
+    color: #daa520;
+}
 .dish-heart {
     position: absolute;
     background-color: var(--color-primary-6);
