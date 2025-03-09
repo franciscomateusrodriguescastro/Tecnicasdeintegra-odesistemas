@@ -9,7 +9,7 @@ function adicionarPedido(nome, preco, imagem) {
 
     atualizarIconeCarrinho();
     exibirPedidos();
-    exibirTotalCarrinho(); // Atualiza o total após adicionar um item
+    exibirTotalCarrinho();
 }
 
 // Atualiza o número de itens no ícone da cesta
@@ -41,47 +41,42 @@ function exibirPedidos() {
         });
     }
 
-    exibirTotalCarrinho(); // Atualiza o total após exibir os pedidos
+    exibirTotalCarrinho();
 }
 
 // Função para remover um pedido do carrinho com animação
 function removerPedido(index) {
     const containerPedidos = document.getElementById("pedidos");
-    const itemPedido = containerPedidos.children[index]; // Pega o item que será removido
+    const itemPedido = containerPedidos.children[index];
 
-    // Adiciona a animação de fadeOut
     itemPedido.classList.add('fadeOut');
 
-    // Aguarda a animação terminar para remover o item
     setTimeout(() => {
-        carrinho.splice(index, 1); // Remove o item do carrinho
+        carrinho.splice(index, 1);
         localStorage.setItem('carrinho', JSON.stringify(carrinho)); 
         exibirPedidos(); 
         atualizarIconeCarrinho();
-        exibirTotalCarrinho(); // Atualiza o total após remover um item
-    }, 500); // Tempo da animação (mesmo tempo que a animação de fadeOut)
+        exibirTotalCarrinho(); 
+    }, 500);
 }
 
 function limparCarrinho() {
     const containerPedidos = document.getElementById("pedidos");
 
-    // Adiciona a animação de fadeOut para cada item antes de limpar
     const todosItens = Array.from(containerPedidos.children);
-    
-    // Adiciona a animação para cada item individualmente
+ 
     todosItens.forEach((item, index) => {
         item.classList.add('fadeOut');
     });
 
-    // Aguarda o tempo da animação (500ms) antes de limpar o carrinho
     setTimeout(() => {
-        localStorage.removeItem('carrinho'); // Limpa o carrinho no localStorage
-        carrinho = []; // Limpa a variável carrinho
+        localStorage.removeItem('carrinho'); 
+        carrinho = [];
 
-        exibirPedidos(); // Exibe a lista vazia
-        atualizarIconeCarrinho(); // Atualiza o contador do carrinho
-        exibirTotalCarrinho(); // Exibe o total atualizado (zero)
-    }, 500); // Tempo da animação (mesmo tempo que a animação de fadeOut)
+        exibirPedidos(); 
+        atualizarIconeCarrinho(); 
+        exibirTotalCarrinho();
+    }, 500); 
 }
 
 // Função para somar o valor total dos itens no carrinho
@@ -96,17 +91,16 @@ function exibirTotalCarrinho() {
         const total = somarCarrinho();
         totalContainer.textContent = `Total: R$${total.toFixed(2)}`;
 
-        // Reinicia a animação removendo e re-adicionando o total
-        totalContainer.style.animation = 'none';  // Remove a animação
-        totalContainer.offsetHeight;  // Trigger reflow
-        totalContainer.style.animation = '';  // Re-aplica a animação
+        totalContainer.style.animation = 'none';
+        totalContainer.offsetHeight;
+        totalContainer.style.animation = ''; 
     }
 }
 
 // Função para inicializar a página e carregar os pedidos
 function inicializarPagina() {
     exibirPedidos();
-    exibirTotalCarrinho(); // Exibe o total ao carregar a página
+    exibirTotalCarrinho();
 }
 
 // Função para atualizar o carrinho ao carregar a página
