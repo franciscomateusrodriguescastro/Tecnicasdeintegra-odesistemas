@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalPages = Math.ceil(dishes.length / itemsPerPage);
 
     function updateCarousel() {
-        const offset = -(index * 100) / totalPages;
+        const offset = -index * (100 / itemsPerPage);
         carousel.style.transform = `translateX(${offset}%)`;
     }
 
