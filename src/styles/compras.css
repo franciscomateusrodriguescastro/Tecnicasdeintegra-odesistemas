@@ -1,17 +1,16 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --color-primary-1: #f1f1df;
+    --color-primary-1: #f9f9f9;
     --color-primary-2: #da6041;
     --color-primary-3: #d49a8b;
     --color-primary-4: #ff0000;
     --color-primary-5: #a30300;
-    --color-primary-6: #a30300;
+    --color-primary-6: #800000; /* Melhor contraste */
 
-    --color-neutral-0: #fff;
-    --color-neutral-1: #333;
+    --color-neutral-0: #ffffff;
+    --color-neutral-1: #333333;
+    --color-neutral-2: #777777;
 }
 
 * {
@@ -27,10 +26,11 @@ body {
 }
 
 header {
-    background-color: var(--color-primary-1);
+    background-color: var(--color-neutral-0);
     padding: 15px;
     text-align: center;
     color: var(--color-primary-6);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 #navbar {
@@ -57,7 +57,6 @@ header {
     font-weight: 600;
 }
 
-
 h1, h2 {
     text-align: center;
     color: var(--color-primary-6);
@@ -73,17 +72,149 @@ h1, h2 {
 }
 
 /* Container de pedidos */
-.pedido-container {
+.pedidos-container {
     background-color: var(--color-neutral-0);
     padding: 15px;
     border-radius: 15px;
     width: 100%;
     box-shadow: 2px 2px 8px rgba(255, 189, 189, 0.1);
     align-items: center;
-    height: 100%;
 }
 
-/* Estilo do item do cardápio */
+/* Cada item de pedido (versão aprimorada) */
+.pedido-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-neutral-0);
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pedido-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pedido-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pedido-info img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.pedido-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.pedido-details h4 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--color-neutral-1);
+}
+
+.pedido-details span {
+    font-size: 12px;
+    color: var(--color-neutral-2);
+}
+
+.pedido-preco {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-primary-5);
+}
+
+/* Botão remover pedido */
+.btn-remover {
+    background-color: rgba(255, 0, 0, 0.1); /* leve fundo vermelho */
+    border: 1px solid red;
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px; /* arredondado */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 6px rgba(255, 0, 0, 0.2);
+}
+
+/* Botão limpar carrinho */
+.btn-limpar {
+    background-color: var(--color-primary-5);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-remover:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+}
+
+
+.btn-limpar i {
+    font-size: 16px;
+}
+
+/* Total do carrinho + botão finalizar */
+#resumo {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: right;
+    font-size: 1.2em;
+}
+
+#finalizar-pedido {
+    background: linear-gradient(45deg, #28a745, #218838);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#finalizar-pedido:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #218838, #1e7e34);
+}
+
+/* Botão adicionar */
+.btn-adicionar {
+    background: #5cb85c;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+}
+
+/* Menu item */
 .menu-item {
     background-color: var(--color-neutral-0);
     padding: 15px;
@@ -97,7 +228,6 @@ h1, h2 {
     box-shadow: 2px 2px 10px rgba(255, 189, 189, 0.1);
 }
 
-/* Estilo para o botão de adicionar */
 .menu-item button {
     background-color: var(--color-primary-5);
     color: var(--color-neutral-0);
@@ -113,8 +243,7 @@ h1, h2 {
     background-color: var(--color-primary-2);
 }
 
-/* Estilo das imagens nos itens do cardápio */
-.menu-item img, .pedido-item img {
+.menu-item img {
     width: 50px;
     height: 50px;
     object-fit: cover;
@@ -122,93 +251,38 @@ h1, h2 {
     margin-right: 10px;
 }
 
-/* Estilo do container de pedidos */
-#pedidos {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-}
-
-/* Estilo para cada item do pedido */
-.pedido-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--color-neutral-0);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(255, 189, 189, 0.1);
-}
-
-/* Estilo do botão de remover pedido */
-.btn-remover {
-    background: transparent;
-    border: none;
-    color: red;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-/* Estilo do botão de limpar carrinho */
-.btn-limpar {
-    background-color: var(--color-primary-5);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-limpar:hover {
-    background-color: var(--color-primary-4);
-    transform: scale(1.05);
-}
-
-.btn-limpar i {
-    font-size: 20px;
-}
-
-/* Estilo do total do carrinho e botão de finalizar */
-#resumo {
-    margin-top: 30px;
-    padding: 20px;
-    text-align: right;
-    font-size: 1.2em;
-}
-
-#finalizar-pedido {
-    background: green;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#finalizar-pedido:hover {
-    background-color: #005500;
-}
-
-/* Estilo do botão de adicionar */
-.btn-adicionar {
-    background: #5cb85c;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: 600;
-}
-
+/* Botão mobile */
 #mobile_btn {
     background: none;
     border: none;
     color: var(--color-neutral-1);
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+    .pedido-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pedido-preco {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+
+    #navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-limpar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #finalizar-pedido {
+        width: 100%;
+    }
 }

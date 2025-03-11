@@ -2,13 +2,19 @@ let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
 // Função para adicionar pedido ao carrinho
 function adicionarPedido(nome, preco, imagem) {
-    let item = { nome, preco, imagem };
+    
+    let item = { nome, preco, imagem}; 
     carrinho.push(item);
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    console.log("Carrinho atualizado:", carrinho);
     atualizarIconeCarrinho();
     exibirPedidos();
     atualizarTotal();
+
 }
+    
+    
+
 
 // Atualiza o número de itens no ícone da cesta
 function atualizarIconeCarrinho() {
@@ -29,9 +35,11 @@ function exibirPedidos() {
         carrinho.forEach((item, index) => {
             let pedidoDiv = document.createElement('div');
             pedidoDiv.classList.add('pedido-item');
+            let imagemSrc = 'src/imagens/hamburguer.png'; // Um caminho fixo só pra testar
+;
             
             pedidoDiv.innerHTML = `
-                <img src="${item.imagem}" alt="${item.nome}" class="pedido-img">
+                <img src="${imagemSrc}" alt="${item.nome}" class="pedido-img">
                 <span class="pedido-nome">${item.nome}</span>
                 <span class="pedido-preco">R$${item.preco.toFixed(2)}</span>
                 <button class="btn-remover" onclick="removerPedido(${index})">Remover</button>
