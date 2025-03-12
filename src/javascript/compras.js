@@ -35,8 +35,7 @@ function exibirPedidos() {
         carrinho.forEach((item, index) => {
             let pedidoDiv = document.createElement('div');
             pedidoDiv.classList.add('pedido-item');
-            let imagemSrc = 'src/imagens/hamburguer.png'; // Um caminho fixo só pra testar
-;
+            let imagemSrc = item.imagem ? item.imagem : 'img/default.png';
             
             pedidoDiv.innerHTML = `
                 <img src="${imagemSrc}" alt="${item.nome}" class="pedido-img">

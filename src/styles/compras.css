@@ -38,6 +38,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
+    flex-wrap: wrap;
 }
 
 #nav_logo {
@@ -116,39 +117,28 @@ h1, h2 {
 .pedido-details {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    width: 100%;
 }
 
-.pedido-details h4 {
-    margin: 0;
-    font-size: 16px;
-    color: var(--color-neutral-1);
-}
-
-.pedido-details span {
-    font-size: 12px;
-    color: var(--color-neutral-2);
-}
-
-.pedido-preco {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--color-primary-5);
+/* Estilo para cada item do pedido */
+.pedido-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-neutral-0);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(255, 189, 189, 0.1);
 }
 
 /* Botão remover pedido */
 .btn-remover {
-    background-color: rgba(255, 0, 0, 0.1); /* leve fundo vermelho */
-    border: 1px solid red;
+    background: transparent;
+    border: none;
     color: red;
     font-size: 18px;
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 8px; /* arredondado */
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    box-shadow: 0 2px 6px rgba(255, 0, 0, 0.2);
 }
 
 /* Botão limpar carrinho */
@@ -187,8 +177,7 @@ h1, h2 {
 }
 
 #finalizar-pedido {
-    background: linear-gradient(45deg, #28a745, #218838);
-    border: none;
+    background: green;
     color: white;
     padding: 12px 24px;
     border-radius: 25px;
@@ -199,13 +188,12 @@ h1, h2 {
 }
 
 #finalizar-pedido:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #218838, #1e7e34);
+    background-color: #005500;
 }
 
 /* Botão adicionar */
 .btn-adicionar {
-    background: #5cb85c;
+    background: var(--color-primary-4);
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -214,75 +202,10 @@ h1, h2 {
     font-weight: 600;
 }
 
-/* Menu item */
-.menu-item {
-    background-color: var(--color-neutral-0);
-    padding: 15px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    box-shadow: 2px 2px 10px rgba(255, 189, 189, 0.1);
-}
-
-.menu-item button {
-    background-color: var(--color-primary-5);
-    color: var(--color-neutral-0);
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-
-.menu-item button:hover {
-    background-color: var(--color-primary-2);
-}
-
-.menu-item img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-/* Botão mobile */
 #mobile_btn {
     background: none;
     border: none;
     color: var(--color-neutral-1);
     font-size: 1.5rem;
     cursor: pointer;
-}
-
-/* Responsividade */
-@media (max-width: 500px) {
-    .pedido-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .pedido-preco {
-        align-self: flex-end;
-        margin-top: 10px;
-    }
-
-    #navbar {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .btn-limpar {
-        width: 100%;
-        justify-content: center;
-    }
-
-    #finalizar-pedido {
-        width: 100%;
-    }
 }
