@@ -1,6 +1,6 @@
 #home {
     display: flex;
-    min-height: calc(100vh-91px);
+    min-height: calc(100vh - 91px);
     position: relative;
 }
 
@@ -60,8 +60,11 @@
 }
 
 #banner img {
-    height: 100%;
-    width: fit-content;
+    max-width: 100%;
+    max-height: 500px; 
+    width: auto; 
+    height: auto;
+    object-fit: contain; 
 }
 
 .shape {
