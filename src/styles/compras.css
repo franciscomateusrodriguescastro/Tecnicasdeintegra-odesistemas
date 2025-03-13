@@ -6,7 +6,7 @@
     --color-primary-3: #d49a8b;
     --color-primary-4: #ff0000;
     --color-primary-5: #a30300;
-    --color-primary-6: #800000; /* Melhor contraste */
+    --color-primary-6: #800000;
 
     --color-neutral-0: #ffffff;
     --color-neutral-1: #333333;
@@ -72,28 +72,72 @@ h1, h2 {
     padding: 20px;
 }
 
-/* Container de pedidos */
-.pedidos-container {
-    background-color: var(--color-neutral-0);
-    padding: 15px;
-    border-radius: 15px;
+#pedidos {
     width: 100%;
-    box-shadow: 2px 2px 8px rgba(255, 189, 189, 0.1);
-    align-items: center;
+    min-height: 100vh;
+    justify-content: flex-start;
 }
 
-/* Cada item de pedido (versão aprimorada) */
+/* Container de pedidos atualizado */
+.pedido-container {
+    background-color: var(--color-neutral-0);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    text-align: center;
+    border: 2px solid var(--color-primary-3);
+    min-height: 150px;
+    transition: min-height 0.3s ease-in-out;
+}
+
+/* Lista de pedidos */
+.pedido-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+/* Itens do pedido com animação */
 .pedido-item {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-neutral-0);
-    padding: 15px;
-    border-radius: 10px;
     width: 100%;
-    max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+/* Animação dos itens */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pedido-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.pedido-item strong {
+    font-size: 1.1rem;
 }
 
 .pedido-item:hover {
@@ -121,17 +165,6 @@ h1, h2 {
     width: 100%;
 }
 
-/* Estilo para cada item do pedido */
-.pedido-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--color-neutral-0);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(255, 189, 189, 0.1);
-}
-
 /* Botão remover pedido */
 .btn-remover {
     background-color: rgba(255, 0, 0, 0.1); /* leve fundo vermelho */
@@ -148,6 +181,13 @@ h1, h2 {
     box-shadow: 0 2px 6px rgba(255, 0, 0, 0.2);
 }
 
+.btn-remover:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+}
+
 /* Botão limpar carrinho */
 .btn-limpar {
     background-color: var(--color-primary-5);
@@ -162,14 +202,6 @@ h1, h2 {
     gap: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-.btn-remover:hover {
-    background-color: red;
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
-}
-
 
 .btn-limpar i {
     font-size: 20px;
