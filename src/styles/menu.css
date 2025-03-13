@@ -1,21 +1,12 @@
 #dishes {
-    width: 100%;
     display: flex;
-    justify-content: flex-start; /* Alterado para flex-start */
+    justify-content: flex-start;
     gap: 24px;
     margin-top: 32px;
-    overflow: hidden; /* Adicionado para esconder o overflow */
-}
-
-#dishes {
+    overflow: hidden;
     width: 100%;
-    display: flex;
-    justify-content: flex-start; /* Alterado para flex-start */
-    gap: 24px;
-    margin-top: 32px;
-    overflow: hidden; /* Adicionado para esconder o overflow */
+    flex-wrap: nowrap;
 }
-
 .dish {
     text-align: center;
     display: flex;
@@ -23,14 +14,12 @@
     align-items: center;
     border-radius: 20px;
     gap: 18px;
-    width: 250px;
+    width: 260px; 
     padding: 10px;
     background-color: var(--color-neutral-0);
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
     position: relative;
-    overflow: hidden;
-    flex: 0 0 calc(100% / 3 - 20px); /* ajustando a largura */
-    max-width: 320px; /* Ajustando para não ficar muito estreito */
+    flex: 0 0 auto;
 }
 
 .fa-solid.fa-heart {
@@ -48,15 +37,15 @@
     justify-content: center;
     font-size: 1.563rem;
     color: var(--color-primary-1);
-    width: 70px;
-    height: 70px;
-    right: -10px;
-    top: -10px;
-    border-radius: 0px 37.5px 0px 42.5px;
+    width: 60px;
+    height: 60px;
+    right: -1px;
+    top: -9px;
+    border-radius: 0px 37.5px 0px 38.5px;
 }
 
 .dish-image {
-    width: 130px;
+    width: 120px;
     height: auto;
     margin-top: 32px;
     max-width: 100%;
@@ -78,65 +67,76 @@
     gap: 20px;
 }
 
-@media screen and (max-width: 1170px) {
-    #dishes {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 
+@media screen and (max-width: 1170px) {
     .dish {
         width: calc(50% - 12px);
+        flex: 0 0 calc(50% - 12px);
     }
 }
 
 @media screen and (max-width: 600px) {
     .dish {
-        width: 100%;
-    }
-
-    #menu .section-subtitle {
-        text-align: center;
+        width: 100%; 
+        flex: 0 0 100%;
     }
 }
-
 
 /* carrossel: */
 
+
 .carousel-container {
     position: relative;
-    width: 100%;
-    max-width: 1000px; /* O limite máximo para o carrossel */
-    margin: auto;
-    overflow: hidden; /* Adicionado para esconder o overflow */
+    height: auto; 
+    width: 100%; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 20px;
+    overflow: hidden; 
+    padding-left: 60px; 
+    padding-right: 60px; 
 }
+
+
 .carousel-wrapper {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: fit-content; /* Ajusta a largura */
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    min-width: 100%;
+    width: max-content;
+    flex-wrap: nowrap;
+    gap: 16px; 
 }
+
 
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(179, 114, 114, 0.555);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 24px;
-    padding: 10px 15px;
-    z-index: 10;
+    font-size: 18px;
+    padding: 10px;
+    z-index: 100; 
     border-radius: 50%;
-    transition: background-color 0.3s ease;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
 }
-
 .carousel-btn:hover {
-    background-color: rgba(66, 3, 3, 0.781);
-}
-#prevBtn {
-    left: 10px; /* Ajustado para ficar mais próximo */
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 #nextBtn {
-    right: 10px; /* Ajustado para ficar mais próximo */
+    right: 5px; 
 }
+
+#prevBtn {
+    left: 5px; 
+}
+

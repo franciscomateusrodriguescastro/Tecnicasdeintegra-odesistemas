@@ -78,37 +78,3 @@ $(document).ready(function () {
         distance: '20%'
     });
 });
-
-
-
-// carrossel:
-
-document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.querySelector(".carousel-wrapper");
-    const dishes = document.querySelectorAll(".dish");
-    const nextBtn = document.getElementById("nextBtn");
-    const prevBtn = document.getElementById("prevBtn");
-
-    let index = 0;
-    const itemsPerPage = 3;
-    const totalPages = Math.ceil(dishes.length / itemsPerPage);
-
-    function updateCarousel() {
-        const offset = -index * (100 / itemsPerPage);
-        carousel.style.transform = `translateX(${offset}%)`;
-    }
-
-    nextBtn.addEventListener("click", function () {
-        if (index < totalPages - 1) {
-            index++;
-            updateCarousel();
-        }
-    });
-
-    prevBtn.addEventListener("click", function () {
-        if (index > 0) {
-            index--;
-            updateCarousel();
-        }
-    });
-});
