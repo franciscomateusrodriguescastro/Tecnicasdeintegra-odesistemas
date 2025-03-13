@@ -1,4 +1,61 @@
 
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carouselWrapper = document.querySelector(".carousel-wrapper");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const dishes = document.querySelectorAll(".dish");
+    const container = document.querySelector(".carousel-container");
+
+    let currentIndex = 0;
+    let dishWidth = dishes[0].getBoundingClientRect().width + 24; // Largura real do item + espaçamento
+
+    function updateDishWidth() {
+        dishWidth = dishes[0].getBoundingClientRect().width + 24; // Recalcula corretamente
+    }
+
+    function updateCarousel() {
+        const containerWidth = container.offsetWidth;
+        const visibleItems = Math.floor(containerWidth / dishWidth);
+        const maxIndex = Math.max(0, dishes.length - visibleItems);
+
+        currentIndex = Math.min(Math.max(currentIndex, 0), maxIndex);
+        let offset = -currentIndex * dishWidth;
+
+        carouselWrapper.style.transform = `translateX(${offset}px)`;
+    }
+
+    nextBtn.addEventListener("click", function () {
+        const containerWidth = container.offsetWidth;
+        const visibleItems = Math.floor(containerWidth / dishWidth);
+        const maxIndex = dishes.length - visibleItems;
+
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevBtn.addEventListener("click", function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    window.addEventListener("resize", function () {
+        setTimeout(() => {
+            updateDishWidth();
+            updateCarousel();
+        }, 100); // Pequeno atraso para evitar bugs ao redimensionar
+    });
+
+    updateCarousel();
+});
+
+
 #dishes {
     display: flex;
     justify-content: flex-start;
@@ -7,6 +64,7 @@
     overflow: hidden;
     width: 100%;
     flex-wrap: nowrap;
+    
 }
 .dish {
     text-align: center;
@@ -76,38 +134,46 @@
     }
 }
 
+/* Ajuste para telas pequenas */
 @media screen and (max-width: 600px) {
     .dish {
         width: 100%;
     }
 }
 
+
 /* carrossel: */
 
 
 .carousel-container {
     position: relative;
+    height: auto;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     overflow: hidden;
+    position: relative;
+    width: 100%;
     padding: 20px;
 }
 
 
 .carousel-wrapper {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     will-change: transform;
+    
+    width: max-content;
     flex-wrap: nowrap;
     gap: 24px;
 }
+
 
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(134, 16, 16, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
     cursor: pointer;
@@ -115,18 +181,15 @@
     padding: 10px;
     z-index: 100; 
     border-radius: 50%;
-    transition: opacity 0.3s, background-color 0.3s;
+    transition: 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
-    opacity: 0.7;
 }
-
 .carousel-btn:hover {
     background-color: rgba(0, 0, 0, 0.9);
-    opacity: 1;
 }
 
 #nextBtn {
@@ -136,3 +199,6 @@
 #prevBtn {
     left: 5px; 
 }
+
+
+
