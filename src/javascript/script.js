@@ -190,6 +190,51 @@ $(document).ready(function () {
         });
     });
 });
+// Função para enviar cadastro via AJAX
+$('#register_form').on('submit', function (e) {
+    e.preventDefault();
+    const emailElement = $('#register_email');
+    const senhaElement = $('#register_senha');
+    const confirmarSenhaElement = $('#register_confirmar_senha');
+
+    // Verifique se os campos existem e têm valores
+    const email = emailElement.val();
+    const senha = senhaElement.val();
+    const confirmarSenha = confirmarSenhaElement.val();
+
+    if (!email || !senha || !confirmarSenha) {
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    if (senha !== confirmarSenha) {
+        alert("As senhas não coincidem!");
+        return;
+    }
+
+    const registerData = { 
+        email: email.trim(), 
+        password: senha.trim() 
+    };
+
+    $.ajax({
+        url: 'http://165.232.140.38:8001/contas/api/users/create/',  // URL de cadastro
+        type: 'POST',  // Método POST para envio de dados
+        contentType: 'application/json',  // Definindo o tipo de conteúdo como JSON
+        data: JSON.stringify(registerData),  // Convertendo o objeto JavaScript em JSON
+        success: function (response) {
+            console.log("Cadastro bem-sucedido:", response); // Log da resposta da API
+            alert("Cadastro realizado com sucesso!");
+            $('#register_form')[0].reset();  // Limpa o formulário após o sucesso
+            window.location.href = '/login';  // Redireciona para a página de login
+        },
+        error: function (xhr, status, error) {
+            console.error("Erro no cadastro:", error);  // Log de erro caso ocorra um problema
+            alert("Erro ao tentar realizar cadastro. Tente novamente.");
+        }
+    });
+});
+
 // Função para alternar entre os formulários de Login e Cadastro
 function toggleForm() {
     var loginForm = document.getElementById("loginForm");
