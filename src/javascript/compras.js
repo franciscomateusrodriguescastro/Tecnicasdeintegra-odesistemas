@@ -1,5 +1,4 @@
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
 // Função para adicionar pedido ao carrinho
 function adicionarPedido(nome, preco, imagem) {
     
@@ -10,11 +9,7 @@ function adicionarPedido(nome, preco, imagem) {
     atualizarIconeCarrinho();
     exibirPedidos();
     atualizarTotal();
-
 }
-    
-    
-
 
 // Atualiza o número de itens no ícone da cesta
 function atualizarIconeCarrinho() {
@@ -82,3 +77,16 @@ document.addEventListener("DOMContentLoaded", () => {
     exibirPedidos();
     atualizarTotal();
 });
+
+function finalizarPedido() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio! Adicione itens antes de finalizar o pedido.");
+        return;
+    }
+
+    alert("✅ Pedido realizado com sucesso!");
+
+    // Limpar o carrinho
+    limparCarrinho();
+}
+document.getElementById("finalizar-pedido").addEventListener("click", finalizarPedido);

@@ -329,58 +329,39 @@
         </div>
         </section>
 
-
         <section id="testimonials">
-            <img src="src/images/chefe.png" id="testimonial_chef" alt="chefe">
-            
-            <!-- Formulário de Avaliação -->
-            <form id="feedback_form">
-                <label for="nome"><b>Nome:</b></label><br />
-                <textarea id="nome" name="nome" rows="4" cols="12" style="resize: none" placeholder="Digite aqui seu nome:" required></textarea><br /><br />
-                
-                <label for="comentario"><b>Comentário:</b></label><br />
-                <textarea id="comentario" name="comentario" rows="4" cols="12" style="resize: none" placeholder="Digite aqui seu comentário:" required></textarea><br /><br />
-                
-                <div class="container">
-                    <p><b>Avaliação:</b> <span id="rating-value">0</span>/5</p>
-                
-                    <div class="stars" id="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                </div>
-                <script>
-                    const stars = document.querySelectorAll('.star');
-                    const ratingValue = document.getElementById('rating-value');
-            
-                    stars.forEach(star => {
-                        star.addEventListener('click', function () {
-                            const value = this.getAttribute('data-value');
-                            ratingValue.textContent = value;
-                            
-                            stars.forEach(s => s.classList.remove('checked'));
-                            this.classList.add('checked');
-                            let previous = this.previousElementSibling;
-                            while (previous) {
-                                previous.classList.add('checked');
-                                previous = previous.previousElementSibling;
-                            }
-                        });
-                    });
-                </script>
-                <button class="btn-default">Enviar Comentário</button>
-            </form>
-        
             <div id="testimonials_content">
                 <h2 class="section-title">Depoimentos</h2>
                 <h3 class="section-subtitle">O que os clientes falam sobre nós</h3>
+            </div>
+
+            <div class="testimonial-container">
+                <img src="src/images/chefe.png" id="testimonial_chef" alt="chefe">
+                
+                <!-- Formulário de Avaliação -->
+                <form id="feedback_form">
+                    <label for="nome"><b>Nome:</b></label>
+                    <textarea id="nome" name="nome" rows="2" placeholder="Digite aqui seu nome:" required></textarea>
+                    
+                    <label for="comentario"><b>Comentário:</b></label>
+                    <textarea id="comentario" name="comentario" rows="4" placeholder="Digite aqui seu comentário:" required></textarea>
+                    
+                    <div class="container">
+                        <p><b>Avaliação:</b> <span id="rating-value">0</span>/5</p>
+                        <div class="stars" id="rating">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                    </div>
+                    <button class="btn-default">Enviar Comentário</button>
+                </form>
+            </div>
             
-                <div id="feedbacks">
-                    <!-- A parte onde as avaliações feitas serão inseridas dinamicamente -->
-                </div>
+            <div id="feedbacks-container">
+                <!-- Avaliações inseridas dinamicamente -->
             </div>
         </section>
         
@@ -388,7 +369,6 @@
     </main>
 
     <footer>
-
         <div id="footer_items">
             <span id="copyrigth">
                 &copy 2025 UNIFOR
@@ -407,7 +387,6 @@
                     <i class="fa-brands fa-facebook"></i>
                 </a>
             </div>
-
         </div>
     </footer>
 
