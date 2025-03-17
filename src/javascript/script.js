@@ -114,7 +114,6 @@ $(document).ready(function () {
             product: 1,
             user: 1
         };
- 
 
         $.ajax({
             url: 'http://165.232.140.38:8001/pedidos/api/reviews/',
@@ -135,38 +134,85 @@ $(document).ready(function () {
             }
         });
     });
-});
-<<<<<<< Updated upstream
-=======
 
-// 🎠 Carrossel de pratos (sem alterações)
-document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.querySelector(".carousel-wrapper");
-    const dishes = document.querySelectorAll(".dish");
-    const nextBtn = document.getElementById("nextBtn");
-    const prevBtn = document.getElementById("prevBtn");
+    // Função para alternar entre login e cadastro
+    function toggleForm() {
+        var loginForm = document.getElementById("loginForm");
+        var registerForm = document.getElementById("registerForm");
+        var formTitle = document.getElementById("form-title");
 
-    let index = 0;
-    const itemsPerPage = 3;
-    const totalPages = Math.max(1, Math.ceil(dishes.length / itemsPerPage));
-
-    function updateCarousel() {
-        const offset = -index * (100 / itemsPerPage);
-        carousel.style.transform = `translateX(${offset}%)`;
+        if (loginForm.style.display === "none") {
+            loginForm.style.display = "block";
+            registerForm.style.display = "none";
+            formTitle.textContent = "Entrar";
+        } else {
+            loginForm.style.display = "none";
+            registerForm.style.display = "block";
+            formTitle.textContent = "Cadastro";
+        }
     }
 
-    nextBtn.addEventListener("click", function () {
-        if (index < totalPages - 1) {
-            index++;
-            updateCarousel();
+    // Função para enviar login via AJAX
+    $('#loginForm').on('submit', function (e) {
+        e.preventDefault();
+
+        const email = $('#login_email').val().trim();
+        const password = $('#login_password').val().trim();
+
+        if (!email || !password) {
+            alert("Preencha todos os campos antes de enviar!");
+            return;
         }
+
+        const loginData = { email, password };
+
+        $.ajax({
+            url: 'http://165.232.140.38:8001/pedidos/api/login/', // Substitua pelo endpoint de login real
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(loginData),
+            success: function () {
+                console.log('✅ Login realizado com sucesso!');
+                alert("Login realizado com sucesso!");
+                // Redirecionar ou outra ação após sucesso
+            },
+            error: function (xhr) {
+                console.error("❌ Erro ao realizar login:", xhr.responseText);
+                alert("Erro ao realizar login. Verifique os dados e tente novamente.");
+            }
+        });
     });
 
-    prevBtn.addEventListener("click", function () {
-        if (index > 0) {
-            index--;
-            updateCarousel();
+    // Função para enviar cadastro via AJAX
+    $('#registerForm').on('submit', function (e) {
+        e.preventDefault();
+
+        const nome = $('#register_nome').val().trim();
+        const email = $('#register_email').val().trim();
+        const password = $('#register_password').val().trim();
+
+        if (!nome || !email || !password) {
+            alert("Preencha todos os campos antes de enviar!");
+            return;
         }
+
+        const registerData = { nome, email, password };
+
+        $.ajax({
+            url: 'http://165.232.140.38:8001/pedidos/api/register/', // Substitua pelo endpoint de cadastro real
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(registerData),
+            success: function () {
+                console.log('✅ Cadastro realizado com sucesso!');
+                alert("Cadastro realizado com sucesso!");
+                // Alternar para a tela de login após cadastro
+                toggleForm();
+            },
+            error: function (xhr) {
+                console.error("❌ Erro ao realizar cadastro:", xhr.responseText);
+                alert("Erro ao realizar cadastro. Verifique os dados e tente novamente.");
+            }
+        });
     });
 });
->>>>>>> Stashed changes

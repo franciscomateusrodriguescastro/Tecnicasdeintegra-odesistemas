@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/styles/login.css"> <!-- Usando o mesmo CSS para estilo consistente -->
-    
+
+    <!-- Adicionando a biblioteca ScrollReveal -->
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Login - Food</title>
-
 </head>
 <body>
     <!-- Navbar -->
@@ -51,7 +52,7 @@
                 </form>
                 
                 <!-- Formulário de Cadastro -->
-                <form id="registerForm">
+                <form id="registerForm" style="display: none;">
                     <label for="new-email">Email:</label>
                     <input type="email" id="new-email" name="email" required>
                     
@@ -72,39 +73,7 @@
         </section>
     </main>
 
-    <script>
-        // Função para alternar entre o formulário de login e cadastro
-        function toggleForm() {
-            var loginForm = document.getElementById("loginForm");
-            var registerForm = document.getElementById("registerForm");
-            var formTitle = document.getElementById("form-title");
-
-            if (loginForm.style.display === "none") {
-                loginForm.style.display = "block";
-                registerForm.style.display = "none";
-                formTitle.textContent = "Entrar";
-            } else {
-                loginForm.style.display = "none";
-                registerForm.style.display = "block";
-                formTitle.textContent = "Cadastro";
-            }
-        }
-
-        // Exemplo de ação no login
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("mensagem").textContent = "Login realizado com sucesso!";
-        });
-
-        // Exemplo de ação no cadastro
-        document.getElementById("registerForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("mensagem").textContent = "Cadastro realizado com sucesso!";
-        });
-    </script>
     <footer>
-        
-
         <div id="footer_items">
             <span id="copyrigth">
                 &copy 2025 UNIFOR
@@ -123,7 +92,6 @@
                     <i class="fa-brands fa-facebook"></i>
                 </a>
             </div>
-
         </div>
     </footer>
 
