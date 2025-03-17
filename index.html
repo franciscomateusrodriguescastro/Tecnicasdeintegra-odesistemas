@@ -352,6 +352,25 @@
                         <span class="star" data-value="5">★</span>
                     </div>
                 </div>
+                <script>
+                    const stars = document.querySelectorAll('.star');
+                    const ratingValue = document.getElementById('rating-value');
+            
+                    stars.forEach(star => {
+                        star.addEventListener('click', function () {
+                            const value = this.getAttribute('data-value');
+                            ratingValue.textContent = value;
+                            
+                            stars.forEach(s => s.classList.remove('checked'));
+                            this.classList.add('checked');
+                            let previous = this.previousElementSibling;
+                            while (previous) {
+                                previous.classList.add('checked');
+                                previous = previous.previousElementSibling;
+                            }
+                        });
+                    });
+                </script>
                 <button class="btn-default">Enviar Comentário</button>
             </form>
         
