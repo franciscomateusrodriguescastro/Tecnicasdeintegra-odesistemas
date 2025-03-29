@@ -57,7 +57,7 @@ $(document).ready(function () {
 
     // Função para carregar avaliações da API
     function loadReviews() {
-        $.get('http://165.232.140.38:8001/pedidos/api/reviews/', function (data) {
+        $.get('/api/reviews', function (data) {
             const feedbacksContainer = $('#feedbacks-container');
             feedbacksContainer.empty();
 
@@ -94,7 +94,6 @@ $(document).ready(function () {
         return starsHtml;
     }
 
-    // Carregar as avaliações ao carregar a página
     loadReviews();
 
     // Função para enviar uma nova avaliação via formulário
@@ -119,7 +118,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: 'http://165.232.140.38:8001/pedidos/api/reviews/',
+            url: '/api/reviews',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(reviewData),

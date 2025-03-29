@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/reviews",
+        "destination": "http://165.232.140.38:8001/pedidos/api/reviews/"
+      }
+    ]
+  }
+  
